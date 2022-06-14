@@ -43,9 +43,9 @@ const questions = [
 function writeToFile(fileName, data) {
 
 
-    fs.writeToFile("readme.md", data)  
-        // const createREADME = generateMarkdown(data)
-        // err ? console.log(err : console.log("successfully";
+    fs.writeFile(fileName, data, (err) =>
+    err ? console.log(err) : console.log('Successfully created README file!'))
+       
     // Call fs write file function with passed file name and data as input arguments
     // You can either use async call with callback function or synchronous call
     // HINT: optional - use standard library function path to construct absolute path
@@ -57,13 +57,12 @@ function init() {
     // 1. Make a call to inquirer.prompt with passed questions as input argument
     inquirer.prompt(questions)
     .then((data) => {
-        generateMarkdown(data);
+        const readmeText = generateMarkdown(data);
+        writeToFile('README.md', readmeText);
 
     })
     
-    // 2. In .then callback, make a call to the utility function genereateMarkdown
-    //  with passed answers from user input as input argument and
-    //  store the return value to a data variable
+
     // 3. Make a call to writeToFile passed file name and data as input arguments
 }
 

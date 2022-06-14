@@ -29,26 +29,25 @@ function generateMarkdown(data) {
   console.log(data);
 
   return `# ${data.projectname}
-  ## A Readme file generator 
     
   ## Description 
-  Enter description text here
+  ${data.description}
   
   ## Table of Contents 
   * [Installation](#installation)
-  ${renderLicenseLink(data.license)}
+  * ${renderLicenseLink(data.license)}
   * [Usage](#installation)
   
   ## Installation
-  
+  ${data.installation}
   ## Usage
-  
+  ${data.usage}
   ## License
   
   ## Contributing
-  
+  ${data.contributing}
   ## Test
-  
+  ${data.testinfo}
   ## and Questions
 `;
 }
