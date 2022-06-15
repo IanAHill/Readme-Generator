@@ -1,21 +1,26 @@
-# Crap
+# crap
     
   ## Description 
-  jsdfkl;asd
+  jasklf;
   
   ## Table of Contents 
   * [Installation](#installation)
-  * * [License](#license)
+  * [License](#license)
   * [Usage](#installation)
   
   ## Installation
-  jsdfkl;asd
+  fjakl;sdf
   ## Usage
-  jkl;asdjflasdjfl
-  ## License
+  asdjkl;f
+  
+  ## License 
+    Apache 2.0;
   
   ## Contributing
-  jfakslj;fls
+  fjsdkf
   ## Test
-  jfksaldjf
+  fjslkf
+  ## License 
+    Apache 2.0;
+  [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
   ## and Questions
