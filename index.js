@@ -1,4 +1,4 @@
-// TODO: Include packages needed for this application
+// Import Packages
 const inquirer = require('inquirer');
 const fs = require('fs');
 const generateMarkdown = require('./generateMarkdown');
@@ -27,12 +27,6 @@ const questions = [
         name: "usage",
     },
     {
-        type: "list",
-        message: "pick a license",
-        name: "license",
-        choices: ["Apache 2.0", "MIT", "Mozilla", "none"]
-    },
-    {
         type: "input",
         message: "Enter contributing guidelines",
         name: "contributing",
@@ -42,36 +36,44 @@ const questions = [
         message: "Enter test information",
         name: "testinfo",
     },
+    {
+        type: "input",
+        message: "Enter your email",
+        name: "email",
+    },
+    {
+        type: "input",
+        message: "Enter your GitHub username",
+        name: "github",
+    },
+    {
+        type: "list",
+        message: "pick a license",
+        name: "license",
+        choices: ["Apache 2.0", "MIT", "Mozilla", "none"]
+    },
     
 
 ];
 
-// TODO: Create a function to write README file
+//function to create/write data to README file. Called in init() function.
 function writeToFile(fileName, data) {
-
-
     fs.writeFile(fileName, data, (err) =>
     err ? console.log(err) : console.log('Successfully created README file!'))
-       
-    // Call fs write file function with passed file name and data as input arguments
-    // You can either use async call with callback function or synchronous call
-    // HINT: optional - use standard library function path to construct absolute path
-    //  to the current folder and file name
 }
 
-// TODO: Create a function to initialize app
+
 function init() {
-    // 1. Make a call to inquirer.prompt with passed questions as input argument
     inquirer.prompt(questions)
     .then((data) => {
         const readmeText = generateMarkdown(data);
-        writeToFile('README.md', readmeText);
+        writeToFile('./output/README.md', readmeText);
 
     })
     
 
-    // 3. Make a call to writeToFile passed file name and data as input arguments
+
 }
 
-// Function call to initialize app
+//starts app
 init();
